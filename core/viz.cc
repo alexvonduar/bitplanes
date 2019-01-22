@@ -95,7 +95,11 @@ void DrawTrackingResult(cv::Mat& dst, const cv::Mat& src, const cv::Rect& r,
                         int shift)
 {
   if(src.channels() == 1)
+#if defined(CV_VERSION_MAJOR) && CV_VERSION_MAJOR == 4
+    cv::cvtColor(src, dst, cv::COLOR_GRAY2BGRA);
+#else
     cv::cvtColor(src, dst, CV_GRAY2BGRA);
+#endif
   else
     src.copyTo(dst);
 

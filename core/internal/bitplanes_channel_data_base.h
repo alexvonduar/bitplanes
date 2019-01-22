@@ -90,7 +90,7 @@ class BitPlanesChannelData
 
 template <class> class BitPlanesChannelDataSubSampled;
 
-template <> template <class M>
+/*template <>*/ template <class M>
 struct channel_data_traits< BitPlanesChannelDataSubSampled<M> >
 {
   typedef M MotionModelType;
